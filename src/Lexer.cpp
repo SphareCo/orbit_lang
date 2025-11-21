@@ -56,8 +56,32 @@ vector<Token> Lexer::tokenize()
             }
             pos++;
             tokens.push_back({TOKEN_STRING, value});
-        }else if(isdigit(current)){
-            string value="";
+        }
+        else if (isdigit(current))
+        {
+            string value = "";
+            while (pos < source.length() && isdigit(source[pos]))
+            {
+                value += source[pos];
+                pos++;
+            }
+            tokens.push_back({TOKEN_NUMBER, value});
+        }
+        else if (isalpha(current))
+        {
+            string value = "";
+            while (pos < source.length() && isalnum(source[pos]))
+            {
+                value += source[pos];
+                pos++;
+            }
+            if (keywords.count(value))
+            {
+                tokens.push_back({keywords[value], value});
+            }
+            else
+            {
+            }
         }
     }
 }
