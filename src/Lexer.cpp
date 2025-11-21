@@ -20,12 +20,14 @@ vector<Token> Lexer::tokenize()
             tokens.push_back({TOKEN_PLUS, "+"});
             pos++;
         }
-        else if(current == '='){
-            tokens.push_back({TOKEN_ASSIGN,"="});
+        else if (current == '=')
+        {
+            tokens.push_back({TOKEN_ASSIGN, "="});
             pos++;
         }
-        else if(current == ';'){
-            tokens.push_back({TOKEN_SEMI,";"});
+        else if (current == ';')
+        {
+            tokens.push_back({TOKEN_SEMI, ";"});
             pos++;
         }
         // else if(current == '-'){
@@ -33,13 +35,29 @@ vector<Token> Lexer::tokenize()
         //     pos++;
         // }
 
-        else if(current == '('){
-            tokens.push_back({TOKEN_LPAREN,"("});
+        else if (current == '(')
+        {
+            tokens.push_back({TOKEN_LPAREN, "("});
             pos++;
         }
-        else if(current == ')'){
-            tokens.push_back({TOKEN_RPAREN,")"});
+        else if (current == ')')
+        {
+            tokens.push_back({TOKEN_RPAREN, ")"});
             pos++;
+        }
+        else if (current == '"')
+        {
+            pos++;
+            string value = "";
+            while (pos < source.length() && source[pos] != '"')
+            {
+                value += source[pos];
+                pos++;
+            }
+            pos++;
+            tokens.push_back({TOKEN_STRING, value});
+        }else if(isdigit(current)){
+            string value="";
         }
     }
 }
