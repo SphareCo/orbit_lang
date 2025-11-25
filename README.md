@@ -1,6 +1,6 @@
 # Orbit Programming Language
 
-> **Version:** 0.1 (The Lexer Engine)  
+> **Version:** 0.2 (The Lexer Engine)  
 > **Developed by:** Sphare Co.  
 > **Status:** Active Development
 
@@ -8,7 +8,7 @@
 
 ---
 
-## 🚀 Key Features (v0.1)
+## 🚀 Key Features (v0.2)
 
 - **Dual Keyword System:** Write code in **English** or **Hindi**.
 - **Custom Lexer:** Built-in Tokenizer to process source code efficiently.
