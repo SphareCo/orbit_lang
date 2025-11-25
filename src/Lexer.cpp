@@ -1,4 +1,4 @@
-#include "Lexer.h"
+#include "../include/Lexer.h"
 #include <cctype>
 
 vector<Token> Lexer::tokenize()
@@ -81,7 +81,13 @@ vector<Token> Lexer::tokenize()
             }
             else
             {
+                tokens.push_back({TOKEN_ID, value});
             }
         }
+        else{
+            pos++;
+        }
     }
+    tokens.push_back({TOKEN_EOF, ""});
+    return tokens;
 }

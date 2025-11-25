@@ -1,0 +1,4 @@
+manlo name = "SphareCo";
+bol name;
+let x = 2;
+print x;

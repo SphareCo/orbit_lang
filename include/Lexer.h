@@ -4,7 +4,7 @@
 #include <string>
 #include <map>
 #include <vector>
-#include "../include/TokenType.h"
+#include "TokenType.h"
 
 using namespace std;
 
