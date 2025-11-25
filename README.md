@@ -1,6 +1,6 @@
 # Orbit Programming Language
 
-> **Version:** 0.2 (The Lexer Engine)  
+> **Version:** 0.2 (The Paser)  
 > **Developed by:** Sphare Co.  
 > **Status:** Active Development
 
