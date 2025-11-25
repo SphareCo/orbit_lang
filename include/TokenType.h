@@ -1,0 +1,24 @@
+#ifndef TOKEN_TYPE_H
+#define TOKEN_TYPE_H
+
+enum TokenType
+{
+    TOKEN_PRINT,
+    TOKEN_VAR,
+    TOKEN_IF,
+    TOKEN_ELSE,
+
+    TOKEN_ID,
+    TOKEN_NUMBER,
+    TOKEN_STRING,
+    TOKEN_ASSIGN,
+    TOKEN_PLUS,
+    TOKEN_MINUS,
+    TOKEN_LPAREN,
+    TOKEN_RPAREN,
+    TOKEN_SEMI,
+
+    TOKEN_EOF
+};
+
+#endif
