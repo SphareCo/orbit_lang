@@ -28,13 +28,22 @@ struct LiteralExpr : public Expression
     string value;
     TokenType type;
 
-    LiteralExpr(string val, TokenType t) : value(val), type(t) {};
+    LiteralExpr(string val, TokenType t) : value(val), type(t) {}
 };
 
 struct VariableExpr : public Expression
 {
     string name;
+    VariableExpr(string n) : name(n) {}
+};
 
-    VariableExpr(string n) : name(n){};
+struct BinaryExpr : public Expression
+{
+    unique_ptr<Expression> left;
+    TokenType op;
+    unique_ptr<Expression> right;
+
+    BinaryExpr(unique_ptr<Expression> l, TokenType o, unique_ptr<Expression> r) :
+    left(move(l)),op(o),right(move(r)){}
 };
 #endif
