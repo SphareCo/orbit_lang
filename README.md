@@ -1,20 +1,42 @@
-# Orbit Programming Language
+# 🪐 Orbit Programming Language
 
-> **Version:** 0.1 (The Lexer Engine)  
+> **Version:** 0.2 (The Parser & Syntax Engine)  
 > **Developed by:** Sphare Co.  
-> **Status:** Active Development
+> **Status:** Active Development (Phase 1)
 
-**Orbit** is a futuristic, dual-language programming language built from scratch using C++. It is designed to bridge the gap between English and Hindi speakers by allowing code to be written in either language (or a mix of both).
+**Orbit** is a futuristic, dual-language programming language designed to bridge the gap between English and Hindi speakers. It allows developers to write code using **Hinglish (Hindi+English)** syntax.
+
+Current capabilities include **Lexical Analysis (Tokenization)** and **Syntax Analysis (AST Generation)**.
 
 ---
 
-## 🚀 Key Features (v0.1)
+## 🚀 What's New in v0.2?
 
-- **Dual Keyword System:** Write code in **English** or **Hindi**.
-- **Custom Lexer:** Built-in Tokenizer to process source code efficiently.
-- **Lightweight:** Written in core C++ for high performance.
+In this version, we have added the **Parser Engine**.
+- **Abstract Syntax Tree (AST):** The engine now understands the *structure* of the code, not just words.
+- **Statement Handling:** Can distinguish between Variable Declarations (`manlo`) and Print Statements (`bolo`).
+- **Smart Error Reporting:** Detects missing semicolons (`;`) or invalid syntax and reports friendly errors.
 
-### Keyword Mapping
+---
+
+## 🛠️ Architecture
+
+How Orbit processes your code:
+
+```mermaid
+graph LR
+    A[Source Code .orb] -->|Input| B(Lexer)
+    B -->|Tokens| C(Parser)
+    C -->|Abstract Syntax Tree| D[Success/Validation]
+```
+- **Lexer:** Breaks code into Tokens (e.g., manlo, =, 10).
+
+- **Parser:** Organizes tokens into a hierarchical Tree structure (AST).
+
+- **Validator:** Checks if the grammar rules (Syntax) are followed.
+## 📂 Keyword Mapping (Dual Mode)
+You can use either English or Hindi keywords. Both work simultaneously!
+
 | Token Type | English Keyword | Hindi Keyword |
 | :--- | :--- | :--- |
 | Variable | `let` | `manlo` |
@@ -22,74 +44,109 @@
 | Condition | `if` | `agar` |
 | Else | `else` | `warna` |
 
+## 🛠️ How to Build & Run (Cross-Platform)
+
+Orbit is written in standard C++, so it runs on **Windows, macOS, and Linux**.
+
+### ✅ Prerequisites
+You need a C++ Compiler installed on your system:
+- **Windows:** MinGW (G++) or Visual Studio.
+- **Mac:** Xcode Command Line Tools (`clang++`).
+- **Linux:** GCC (`g++`).
+
 ---
 
-## 📂 Project Structure
+### 🪟 Windows
 
-```text
-Orbit_Lang/
-├── docs/            # Documentation website
-├── examples/        # Example scripts (.orb files)
-├── include/         # Header files (.h)
-├── src/             # Source code (.cpp)
-└── README.md        # This file
-```
+1.  **Open Terminal:** Open PowerShell, CMD, or VS Code Terminal.
+2.  **Navigate to Source:**
+    ```powershell
+    cd src
+    ```
+3.  **Compile:**
+    ```powershell
+    g++ main.cpp Lexer.cpp Parser.cpp -o orbit
+    ```
+4.  **Run:**
+    ```powershell
+    .\orbit.exe ..\examples\test.orb
+    ```
 
-## 🛠️ How to Build & Run
+---
 
-To run Orbit on your machine, you need a C++ compiler (like G++).
+### 🐧 Linux (Ubuntu/Debian/Fedora)
 
-**Step 1: Navigate to Source :**
-Open your terminal/command prompt and go to the `src` folder:
+1.  **Install GCC (if not installed):**
+    ```bash
+    sudo apt update && sudo apt install build-essential
+    ```
+2.  **Navigate to Source:**
+    ```bash
+    cd src
+    ```
+3.  **Compile:**
+    ```bash
+    g++ main.cpp Lexer.cpp Parser.cpp -o orbit
+    ```
+4.  **Run:**
+    ```bash
+    ./orbit ../examples/test.orb
+    ```
 
+---
+
+### 🍎 macOS
+
+1.  **Install Compiler (if not installed):**
+    Open terminal and type:
+    ```bash
+    xcode-select --install
+    ```
+2.  **Navigate to Source:**
+    ```bash
+    cd src
+    ```
+3.  **Compile:**
+    ```bash
+    g++ main.cpp Lexer.cpp Parser.cpp -o orbit
+    ```
+4.  **Run:**
+    ```bash
+    ./orbit ../examples/test.orb
+    ```
+
+### Expected Output:
 ```sh
-cd src
-```
-**Step 2: Compile the Engine :**
-    Run the following command to compile the `Lexer` and `Main controller`:
-
-```sh 
-g++ main.cpp Lexer.cpp -o orbit
-```
-(This will create an executable file named `orbit.exe`)
-
-**Step 3: Run a Script :**
-    Execute the example script provided in the examples folder:
-
-```sh
-./orbit ../examples/test.orb
-```
-
-### 📝 Example Code (test.orb)
-
-**Plaintext**
-```sh
-manlo name = "SphareCo";
-bol name;
-let x = 2;
-print x;
-```
-### Output:
-
-**Plaintext**
-```
 ---Orbit Lexer Output(Tokens)---
 Token ID: 1 || Token value: manlo
 Token ID: 4 || Token value: name
 Token ID: 7 || Token value: =
-Token ID: 6 || Token value: SphareCo
+Token ID: 6 || Token value: Orbit Lang
 Token ID: 12 || Token value: ;
-Token ID: 4 || Token value: bol
+Token ID: 0 || Token value: bolo
 Token ID: 4 || Token value: name
 Token ID: 12 || Token value: ;
 Token ID: 1 || Token value: let
-Token ID: 4 || Token value: x
+Token ID: 4 || Token value: version
 Token ID: 7 || Token value: =
 Token ID: 5 || Token value: 2
 Token ID: 12 || Token value: ;
 Token ID: 0 || Token value: print
-Token ID: 4 || Token value: x
+Token ID: 4 || Token value: version
 Token ID: 12 || Token value: ;
-Token ID: 13 || Token value: 
-...
+Token ID: 0 || Token value: bolo
+Token ID: 6 || Token value: Testing Complete
+Token ID: 12 || Token value: ;
+Token ID: 13 || Token value:
+
+---Parsing Successfull---
+Total Statements: 5
 ```
+### 🗺️ Roadmap Status
+- [x] v0.1: Lexer (Tokenization Engine) - Completed
+
+- [x] v0.2: Parser (AST & Syntax Check) - Completed ✅
+
+- [ ] v0.3: Interpreter (Maths & Execution) - Next Step
+
+**Note:** This version validates the syntax but does not yet execute mathematical logic (like 5+5). That feature is coming in **v0.3**.
