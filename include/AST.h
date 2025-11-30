@@ -30,4 +30,11 @@ struct LiteralExpr : public Expression
 
     LiteralExpr(string val, TokenType t) : value(val), type(t) {};
 };
+
+struct VariableExpr : public Expression
+{
+    string name;
+
+    VariableExpr(string n) : name(n){};
+};
 #endif
