@@ -43,7 +43,14 @@ struct BinaryExpr : public Expression
     TokenType op;
     unique_ptr<Expression> right;
 
-    BinaryExpr(unique_ptr<Expression> l, TokenType o, unique_ptr<Expression> r) :
-    left(move(l)),op(o),right(move(r)){}
+    BinaryExpr(unique_ptr<Expression> l, TokenType o, unique_ptr<Expression> r) : left(move(l)), op(o), right(move(r)) {}
 };
+
+struct PrintStatement : public Statement
+{
+    unique_ptr<Expression> expression;
+
+    PrintStatement(unique_ptr<Expression> expr) : expression(move(expr)) {}
+};
+
 #endif
