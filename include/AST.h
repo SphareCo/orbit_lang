@@ -56,9 +56,9 @@ struct PrintStatement : public Statement
 struct VarDeclaration : public Statement
 {
     string name;
-    unique_ptr<Statement> initializer;
+    unique_ptr<Expression>initializer;
 
-    VarDeclaration(string n, unique_ptr<Statement> init) : name(n), initializer(move(init)) {}
+    VarDeclaration(string n, unique_ptr<Expression> init) : name(n), initializer(move(init)) {}
 };
 
 #endif

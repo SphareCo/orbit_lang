@@ -1,4 +1,7 @@
-manlo name = "SphareCo";
-bol name;
-let x = 2;
-print x;
+manlo name = "Orbit Lang";
+bolo name;
+
+let version = 2;
+print version;
+
+bolo "Testing Complete";
