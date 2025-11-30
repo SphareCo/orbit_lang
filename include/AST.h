@@ -53,4 +53,12 @@ struct PrintStatement : public Statement
     PrintStatement(unique_ptr<Expression> expr) : expression(move(expr)) {}
 };
 
+struct VarDeclaration : public Statement
+{
+    string name;
+    unique_ptr<Statement> initializer;
+
+    VarDeclaration(string n, unique_ptr<Statement> init) : name(n), initializer(move(init)) {}
+};
+
 #endif
