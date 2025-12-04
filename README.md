@@ -1,6 +1,6 @@
 # 🪐 Orbit Programming Language
 
-> **Version:** 0.2 (The Parser & Syntax Engine)  
+> **Version:** 0.3 (The Interpreter and Runtime Engine)  
 > **Developed by:** Sphare Co.  
 > **Status:** Active Development (Phase 1)
 
@@ -10,14 +10,16 @@ Current capabilities include **Lexical Analysis (Tokenization)** and **Syntax An
 
 ---
 
-## 🚀 What's New in v0.2?
+## 🚀 What's New in v0.3?
+In this version, we have added the **Interpreter Engine**. Orbit is no longer just "checking" code; it is now **running** it!
 
-In this version, we have added the **Parser Engine**.
-- **Abstract Syntax Tree (AST):** The engine now understands the *structure* of the code, not just words.
-- **Statement Handling:** Can distinguish between Variable Declarations (`manlo`) and Print Statements (`bolo`).
-- **Smart Error Reporting:** Detects missing semicolons (`;`) or invalid syntax and reports friendly errors.
+- **Runtime Execution:** The code actually runs and produces output.
+- **Data Types:** Support for `Number` (Double), `String` (Text), and `Boolean` (True/False).
+- **Hinglish Booleans:** Outputs `sahi` for `true` and `galat` for `false`.
+- **Visitor Pattern:** Implemented a robust Visitor architecture to traverse the AST.
 
 ---
+
 
 ## 🛠️ Architecture
 
@@ -27,13 +29,15 @@ How Orbit processes your code:
 graph LR
     A[Source Code .orb] -->|Input| B(Lexer)
     B -->|Tokens| C(Parser)
-    C -->|Abstract Syntax Tree| D[Success/Validation]
+    C -->|Abstract Syntax Tree| D(Interpreter)
+    D -->|Execution| E[Output/Result]
 ```
 - **Lexer:** Breaks code into Tokens (e.g., manlo, =, 10).
 
 - **Parser:** Organizes tokens into a hierarchical Tree structure (AST).
 
 - **Validator:** Checks if the grammar rules (Syntax) are followed.
+- **Interpreter:** Walks through the Tree and executes logic (e.g., Printing values).
 ## 📂 Keyword Mapping (Dual Mode)
 You can use either English or Hindi keywords. Both work simultaneously!
 
