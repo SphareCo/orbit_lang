@@ -1,6 +1,5 @@
 // This is header to insure that a file include only once
 #ifndef RUNTIME_VALUE_H
-
 #define RUNTIME_VALUE_H
 
 #include <string>
