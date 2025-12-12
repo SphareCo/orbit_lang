@@ -8,6 +8,10 @@ enum TokenType
     TOKEN_IF,
     TOKEN_ELSE,
 
+    TOKEN_TRUE,
+    TOKEN_FALSE,
+    TOKEN_NULL,
+
     TOKEN_ID,
     TOKEN_NUMBER,
     TOKEN_STRING,

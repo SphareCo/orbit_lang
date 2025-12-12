@@ -23,15 +23,22 @@ private:
 
     void initKeywords()
     {
+
         keywords["print"] = TOKEN_PRINT;
         keywords["let"] = TOKEN_VAR;
         keywords["if"] = TOKEN_IF;
         keywords["else"] = TOKEN_ELSE;
+        keywords["true"] = TOKEN_TRUE;
+        keywords["false"] = TOKEN_FALSE;
+        keywords["null"] = TOKEN_NULL;
 
         keywords["bolo"] = TOKEN_PRINT;
         keywords["manlo"] = TOKEN_VAR;
         keywords["agar"] = TOKEN_IF;
         keywords["warna"] = TOKEN_ELSE;
+        keywords["sahi"] = TOKEN_TRUE;
+        keywords["galat"] = TOKEN_FALSE;
+        keywords["khali"] = TOKEN_NULL;
     }
 
 public:
