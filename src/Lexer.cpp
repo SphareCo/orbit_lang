@@ -20,6 +20,21 @@ vector<Token> Lexer::tokenize()
             tokens.push_back({TOKEN_PLUS, "+"});
             pos++;
         }
+        else if (current == '-')
+        {
+            tokens.push_back({TOKEN_MINUS, "-"});
+            pos++;
+        }
+        else if (current == '*')
+        {
+            tokens.push_back({TOKEN_STAR, "*"});
+            pos++;
+        }
+        else if (current == '/')
+        {
+            tokens.push_back({TOKEN_SLASH});
+            pos++;
+        }
         else if (current == '=')
         {
             tokens.push_back({TOKEN_ASSIGN, "="});
@@ -43,6 +58,15 @@ vector<Token> Lexer::tokenize()
         else if (current == ')')
         {
             tokens.push_back({TOKEN_RPAREN, ")"});
+            pos++;
+        }
+        else if (current == '{')
+        {
+            tokens.push_back({TOKEN_LBRACE, "{"});
+            pos++;
+        }
+        else if(current == '}'){
+            tokens.push_back({TOKEN_RBRACE,"}"});
             pos++;
         }
         else if (current == '"')
@@ -84,7 +108,8 @@ vector<Token> Lexer::tokenize()
                 tokens.push_back({TOKEN_ID, value});
             }
         }
-        else{
+        else
+        {
             pos++;
         }
     }

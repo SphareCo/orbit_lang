@@ -1,0 +1,3 @@
+C:/Users/nehab/Desktop/orbit_lang/build/CMakeFiles/orbit.dir
+C:/Users/nehab/Desktop/orbit_lang/build/CMakeFiles/edit_cache.dir
+C:/Users/nehab/Desktop/orbit_lang/build/CMakeFiles/rebuild_cache.dir

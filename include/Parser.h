@@ -40,15 +40,15 @@ private:
         return peek().type == type;
     }
 
-    bool match(TokenType type)
-    {
-        if (check(type))
-        {
-            advance();
-            return true;
-        }
-        return false;
-    }
+    // bool match(TokenType type)
+    // {
+    //     if (check(type))
+    //     {
+    //         advance();
+    //         return true;
+    //     }
+    //     return false;
+    // }
 
     Token consume(TokenType type, string message)
     {
@@ -64,7 +64,10 @@ public:
     vector<unique_ptr<Statement>> parse();
 
     unique_ptr<Statement> parseStatement();
+    unique_ptr<Statement> parseIfStatement();
+    unique_ptr<Statement> parseBlock();
     unique_ptr<Expression> parseExpression();
+    unique_ptr<Expression> parseTerm();
     unique_ptr<Expression> parsePrimary();
 };
 

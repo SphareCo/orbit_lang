@@ -10,7 +10,14 @@
 using namespace std;
 
 // It's a forward declearation to tell the compiler that visitor is coming now
-struct Visitor;
+// struct Visitor;
+struct LiteralExpr;
+struct VariableExpr;
+struct BinaryExpr;
+struct PrintStatement;
+struct VarDeclaration;
+struct BlockStatement;
+struct IfStatement;
 
 class Visitor
 {
@@ -20,13 +27,13 @@ public:
     virtual void visit(BinaryExpr *expr) = 0;
     virtual void visit(PrintStatement *expr) = 0;
     virtual void visit(VarDeclaration *expr) = 0;
+    virtual void visit(BlockStatement *stmt) = 0;
+    virtual void visit(IfStatement *stmt) = 0;
 };
 // Abstract Syntax Tree node = Base node
 struct ASTNode
 {
-
     virtual ~ASTNode() = default;
-
     virtual void accept(Visitor &v) = 0;
 };
 
@@ -82,4 +89,21 @@ struct VarDeclaration : public Statement
     void accept(Visitor &v) override { v.visit(this); }
 };
 
+struct BlockStatement : public Statement
+{
+    // string name;
+    vector<unique_ptr<Statement>> statements;
+    BlockStatement(vector<unique_ptr<Statement>> stmts) : statements(move(stmts)) {}
+    void accept(Visitor &v) override { v.visit(this); }
+};
+
+struct IfStatement : public Statement
+{
+    unique_ptr<Expression> condition;
+    unique_ptr<Statement> thenBranch;
+    unique_ptr<Statement> elseBranch;
+
+    IfStatement(unique_ptr<Expression> cond, unique_ptr<Statement> thenB, unique_ptr<Statement> elseB) : condition(move(cond)), thenBranch(move(thenB)), elseBranch(move(elseB)) {}
+    void accept(Visitor &v) override { v.visit(this); }
+};
 #endif

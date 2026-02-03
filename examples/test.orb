@@ -1,7 +1,21 @@
-manlo name = "Orbit Lang";
-bolo name;
 
-let version = 2;
-print version;
+manlo x = 10;
 
-bolo "Testing Complete";
+
+let y = 20;
+
+bolo "--- Testing Math (BODMAS) ---";
+bolo x + y * 2; 
+
+bolo "--- Testing Logic (If/Else) ---";
+
+agar (x) {
+    bolo "Success: X ki value true hai!";
+    
+    manlo message = "Inside Block";
+    bolo message;
+} warna {
+    bolo "Error: Kuch gadbad hai.";
+}
+
+bolo "--- Testing Complete ---";

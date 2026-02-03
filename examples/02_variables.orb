@@ -1,0 +1,8 @@
+// Test 2: Variables
+manlo name = "Orbit Language";
+let version = 0.5;
+
+bolo "Language Name:";
+bolo name;
+bolo "Current Version:";
+print version;

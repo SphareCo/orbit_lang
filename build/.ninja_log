@@ -1,0 +1,7 @@
+# ninja log v7
+4	1007	7909389190029921	CMakeFiles/orbit.dir/src/Lexer.cpp.obj	f23dc7e5d5b2d242
+125	1688	7909389191349906	CMakeFiles/orbit.dir/src/Parser.cpp.obj	ec2f1327312e0b55
+241	1784	7909389192510915	CMakeFiles/orbit.dir/src/main.cpp.obj	1fb09388f82b152f
+1784	2865	7909389207888983	orbit.exe	74471d53d2521096
+7	1213	7909391016511754	CMakeFiles/orbit.dir/src/main.cpp.obj	1fb09388f82b152f
+1214	2247	7909391028536120	orbit.exe	74471d53d2521096

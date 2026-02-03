@@ -1,0 +1,13 @@
+// Test 6: Nested If/Else
+let age = 20;
+let hasId = sahi; // true
+
+agar (age) {
+    bolo "Age is valid.";
+    
+    agar (hasId) {
+        bolo "Entry Granted (ID bhi hai).";
+    } warna {
+        bolo "Entry Denied (ID missing).";
+    }
+}

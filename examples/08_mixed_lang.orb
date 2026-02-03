@@ -1,0 +1,8 @@
+// Test 8: Hindi English Mix
+let a = 10;
+manlo b = 20;
+
+agar (a) {
+    print "English If works with Hindi Variable";
+    bolo b;
+}

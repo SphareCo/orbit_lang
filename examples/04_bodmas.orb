@@ -1,0 +1,12 @@
+// Test 4: BODMAS Precedence
+// Rule: Divide/Multiply pehle, Plus/Minus baad mein
+// 10 + 5 * 2 = 20 aana chahiye (Not 30)
+
+manlo result = 10 + 5 * 2;
+bolo "BODMAS Check (Expect 20):";
+bolo result;
+
+let complex = 100 - 50 / 2; 
+// 100 - 25 = 75
+bolo "Division Check (Expect 75):";
+bolo complex;

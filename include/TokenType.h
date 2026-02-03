@@ -7,7 +7,6 @@ enum TokenType
     TOKEN_VAR,
     TOKEN_IF,
     TOKEN_ELSE,
-
     TOKEN_TRUE,
     TOKEN_FALSE,
     TOKEN_NULL,
@@ -15,11 +14,17 @@ enum TokenType
     TOKEN_ID,
     TOKEN_NUMBER,
     TOKEN_STRING,
+
     TOKEN_ASSIGN,
     TOKEN_PLUS,
     TOKEN_MINUS,
+    TOKEN_STAR,
+    TOKEN_SLASH,
+
     TOKEN_LPAREN,
     TOKEN_RPAREN,
+    TOKEN_LBRACE,
+    TOKEN_RBRACE,
     TOKEN_SEMI,
 
     TOKEN_EOF

@@ -4,6 +4,7 @@
 #include <vector>
 #include "../include/Lexer.h"
 #include "../include/Parser.h"
+#include "../include/Interpreter.h"
 
 using namespace std;
 
@@ -34,14 +35,18 @@ int main(int argc, char *argv[])
     Parser parser(tokens);
     vector<unique_ptr<Statement>> statements = parser.parse();
 
-    cout << "---Orbit Lexer Output(Tokens)---" << endl;
-    for (const auto &token : tokens)
-    {
-        cout << "Token ID: " << token.type << " || Token value: " << token.value << endl;
+    if(!statements.empty()){
+        Interpreter interpreter;
+        interpreter.interpret(statements);
     }
+    // cout << "---Orbit Lexer Output(Tokens)---" << endl;
+    // for (const auto &token : tokens)
+    // {
+    //     cout << "Token ID: " << token.type << " || Token value: " << token.value << endl;
+    // }
 
-    cout << "---Parsing Successfull---" << endl;
-    cout << "Total Statements: " << statements.size() << endl;
+    // cout << "---Parsing Successfull---" << endl;
+    // cout << "Total Statements: " << statements.size() << endl;
 
     return 0;
 }

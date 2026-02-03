@@ -1,0 +1,12 @@
+// Test 7: Blocks and Scope
+manlo x = 10;
+
+agar (x) {
+    // New Scope
+    manlo x = 99;
+    bolo "Inside Block x is (Expect 99):";
+    bolo x;
+}
+
+bolo "Outside Block x is (Expect 10):";
+bolo x;

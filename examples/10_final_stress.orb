@@ -1,0 +1,15 @@
+// Test 10: Final Boss (Maths + Logic + Mix)
+manlo basic = 1000;
+let tax = 100;
+let isRich = sahi;
+
+let total = basic + tax * 2; 
+// 1000 + 200 = 1200
+
+agar (isRich) {
+    bolo "Rich Person Total:";
+    bolo total;
+} warna {
+    bolo "Normal Total:";
+    bolo basic;
+}

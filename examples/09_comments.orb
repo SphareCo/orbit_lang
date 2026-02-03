@@ -1,0 +1,6 @@
+// Test 9: Comments Check
+manlo x = 10;
+// manlo x = 50;  <-- Ye line run nahi honi chahiye
+
+bolo "Value should be 10:";
+bolo x;

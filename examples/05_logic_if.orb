@@ -1,0 +1,8 @@
+// Test 5: Basic Conditions
+manlo marks = 80;
+
+agar (marks) {
+    bolo "Student Pass hai!";
+} warna {
+    bolo "Student Fail hai.";
+}

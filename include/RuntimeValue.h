@@ -70,7 +70,7 @@ struct RuntimeValue
         }
         else if (type == VAL_BOOL)
         {
-            return boolVal ? "ture" : "false";
+            return boolVal ? "true" : "false";
         }
         else
         {
